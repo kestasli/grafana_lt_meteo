@@ -1,0 +1,8 @@
+data_source_plugin: JSON API
+
+data_source_name: eismoinfo_all_stations
+URL: https://eismoinfo.lt/weather-conditions-service
+
+data_source_name: LT_AIRQUALITY
+URL: http://193.219.53.11/ap3/SS/index.php
+query_string: action=startup&error=ok&lsversion=1
