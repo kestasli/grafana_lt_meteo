@@ -1,0 +1,424 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 16,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "c2e675ec-542c-420c-b888-f6cae6d808c8"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "max": 5,
+          "min": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 11,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "type": "default"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": true,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "field": "index",
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.6,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 7,
+                  "max": 5,
+                  "min": 1
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "index",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 15,
+                  "offsetY": 15,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "latitude": "lat",
+              "longitude": "long",
+              "mode": "coords"
+            },
+            "name": "Layer 1",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": 55.189421,
+          "lon": 22.997568,
+          "zoom": 6.71
+        }
+      },
+      "pluginVersion": "11.6.0-84491",
+      "targets": [
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "c2e675ec-542c-420c-b888-f6cae6d808c8"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.result.updatemap[*].indeksas",
+              "language": "jsonpath",
+              "name": "index",
+              "type": "number"
+            },
+            {
+              "jsonPath": "$.result.library.stationsLocations[*].location",
+              "language": "jsonpath",
+              "name": "name"
+            },
+            {
+              "jsonPath": "$.result.library.stationsLocations[*].long",
+              "language": "jsonpath",
+              "name": "long",
+              "type": "number"
+            },
+            {
+              "jsonPath": "$.result.library.stationsLocations[*].lat",
+              "language": "jsonpath",
+              "name": "lat",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "title": "Air Quality",
+      "type": "geomap"
+    },
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "a5afb3be-0039-4673-b21b-a21b62115568"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "green",
+            "mode": "continuous-BlYlRd"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "decimals": 1,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 13,
+        "x": 11,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "basemap": {
+          "config": {
+            "showLabels": true,
+            "theme": "light"
+          },
+          "name": "Layer 0",
+          "type": "carto"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": true,
+          "showScale": true,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "field": "temp",
+                  "fixed": "orange"
+                },
+                "opacity": 0.5,
+                "rotation": {
+                  "field": "wind",
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "field": "wind",
+                  "fixed": 14,
+                  "max": 8,
+                  "min": 3
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "text": {
+                  "field": "temp",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 20,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "A"
+            },
+            "location": {
+              "latitude": "lat",
+              "longitude": "lng",
+              "mode": "coords"
+            },
+            "name": "Layer 1",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": 55.132422,
+          "lon": 21.764752,
+          "zoom": 6.83
+        }
+      },
+      "pluginVersion": "11.6.0-84491",
+      "targets": [
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "a5afb3be-0039-4673-b21b-a21b62115568"
+          },
+          "fields": [
+            {
+              "jsonPath": "lat",
+              "language": "jsonata",
+              "name": "lat",
+              "type": "number"
+            },
+            {
+              "jsonPath": "lng",
+              "language": "jsonata",
+              "name": "lng",
+              "type": "number"
+            },
+            {
+              "jsonPath": "oro_temperatura",
+              "language": "jsonata",
+              "name": "temp",
+              "type": "number"
+            },
+            {
+              "jsonPath": "vejo_greitis_vidut",
+              "language": "jsonata",
+              "name": "wind",
+              "type": "number"
+            },
+            {
+              "jsonPath": "krituliu_kiekis",
+              "language": "jsonata",
+              "name": "rain",
+              "type": "number"
+            },
+            {
+              "jsonPath": "surinkimo_data",
+              "language": "jsonata",
+              "name": "date",
+              "type": "time"
+            },
+            {
+              "jsonPath": "id",
+              "language": "jsonata",
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "jsonPath": "irenginys",
+              "language": "jsonata",
+              "name": "device",
+              "type": "string"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "title": "Eismo Info",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "number",
+                "targetField": "temp"
+              },
+              {
+                "destinationType": "number",
+                "targetField": "wind"
+              },
+              {
+                "destinationType": "string",
+                "targetField": "id"
+              },
+              {
+                "destinationType": "string",
+                "targetField": "device"
+              }
+            ],
+            "fields": {}
+          }
+        },
+        {
+          "id": "formatTime",
+          "options": {
+            "outputFormat": "YYYY-MM-DD hh:mm",
+            "timeField": "date",
+            "useTimezone": true
+          }
+        }
+      ],
+      "type": "geomap"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "LT meteo",
+  "uid": "c8b56615-5de5-494d-b034-9015ef8f6f5d",
+  "version": 33
+}
